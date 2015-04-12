@@ -10,4 +10,6 @@
 
 @interface Dog : NSObject 
 
+@property (strong, nonatomic) NSDate *datePetted;
+
 @end

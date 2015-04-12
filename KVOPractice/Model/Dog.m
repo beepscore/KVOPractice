@@ -10,4 +10,18 @@
 
 @implementation Dog
 
+// override implicitly synthesized setter to send KVO notifications
+// don't need to do this because NSObject is KVO compliant?
+// - (void)setDatePetted:(NSDate *)aDate {
+//
+//     KVO send notification
+//     [self willChangeValueForKey:@"datePetted"];
+//
+//     set instance variable
+//     _datePetted = aDate;
+//
+//     KVO send notification
+//     [self didChangeValueForKey:@"datePetted"];
+// }
+
 @end
