@@ -13,6 +13,7 @@
 @interface StatusViewController ()
 
 @property (strong, nonatomic) BSDog *dog;
+@property (weak, nonatomic) IBOutlet UILabel *lastPettedLabel;
 
 @end
 
@@ -74,6 +75,8 @@
         // assumes object is dog
         NSDate *datePettedFromKVO = [change objectForKey:NSKeyValueChangeNewKey];
         NSLog(@"StatusViewController datePettedFromKVO %@", datePettedFromKVO);
+        self.lastPettedLabel.text = [datePettedFromKVO
+                                     descriptionWithLocale:[NSLocale currentLocale]];
     }
 
     else {

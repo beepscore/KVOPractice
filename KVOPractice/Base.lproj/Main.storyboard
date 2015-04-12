@@ -31,13 +31,41 @@
                                     <segue destination="J3I-Zg-cpC" kind="show" id="COs-33-zml"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dog last petted at:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YL1-UJ-BMo">
+                                <rect key="frame" x="20" y="170" width="143" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="never petted!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqL-57-vpQ">
+                                <rect key="frame" x="20" y="211" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="YL1-UJ-BMo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="170" id="1vY-E7-4r0"/>
+                            <constraint firstItem="nqL-57-vpQ" firstAttribute="bottom" secondItem="YL1-UJ-BMo" secondAttribute="bottom" id="MCo-15-LlI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Dyb-SV-tkW" secondAttribute="trailing" constant="40" id="R1o-90-8DZ"/>
+                            <constraint firstAttribute="trailing" secondItem="nqL-57-vpQ" secondAttribute="trailing" constant="20" id="S8R-jV-7Br"/>
                             <constraint firstItem="Dyb-SV-tkW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="U5l-jP-Utk"/>
+                            <constraint firstItem="nqL-57-vpQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="XdW-Qd-RPZ"/>
+                            <constraint firstItem="nqL-57-vpQ" firstAttribute="leading" secondItem="YL1-UJ-BMo" secondAttribute="trailing" constant="20" id="hg9-Ie-7WE"/>
+                            <constraint firstItem="YL1-UJ-BMo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="qkO-wo-dHi"/>
+                            <constraint firstItem="nqL-57-vpQ" firstAttribute="top" secondItem="YL1-UJ-BMo" secondAttribute="bottom" constant="20" id="sVg-Ov-cpi"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="MCo-15-LlI"/>
+                                <exclude reference="hg9-Ie-7WE"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="lastPettedLabel" destination="nqL-57-vpQ" id="X2y-pf-dhF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
