@@ -38,7 +38,7 @@
 
 - (IBAction)petTheDogTapped:(id)sender {
     self.dog.datePetted = [NSDate date];
-    NSLog(@"self.dog.datePetted %@", self.dog.datePetted);
+    NSLog(@"DogViewController self.dog.datePetted %@", self.dog.datePetted);
 }
 
 @end
