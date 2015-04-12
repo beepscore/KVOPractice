@@ -14,6 +14,7 @@
 		DE3DCB491ADA0433001B8A88 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE3DCB481ADA0433001B8A88 /* Images.xcassets */; };
 		DE3DCB4C1ADA0433001B8A88 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE3DCB4A1ADA0433001B8A88 /* LaunchScreen.xib */; };
 		DE3DCB581ADA0433001B8A88 /* KVOPracticeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3DCB571ADA0433001B8A88 /* KVOPracticeTests.m */; };
+		DE9332151ADADC8D00AA796B /* DogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9332141ADADC8D00AA796B /* DogViewController.m */; };
 		DEE207D31ADACACF00357551 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE207D21ADACACF00357551 /* Dog.m */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,8 @@
 		DE3DCB571ADA0433001B8A88 /* KVOPracticeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVOPracticeTests.m; sourceTree = "<group>"; };
 		DE4BA96F1ADA0C83008FA677 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DE4BA9711ADA0C91008FA677 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		DE9332131ADADC8D00AA796B /* DogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogViewController.h; sourceTree = "<group>"; };
+		DE9332141ADADC8D00AA796B /* DogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogViewController.m; sourceTree = "<group>"; };
 		DEE207D21ADACACF00357551 /* Dog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dog.m; path = Model/Dog.m; sourceTree = "<group>"; };
 		DEE207D41ADACAE800357551 /* Dog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Dog.h; path = Model/Dog.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +94,8 @@
 				DEE207D51ADACB8C00357551 /* Model */,
 				DE3DCB3F1ADA0433001B8A88 /* AppDelegate.h */,
 				DE3DCB401ADA0433001B8A88 /* AppDelegate.m */,
+				DE9332131ADADC8D00AA796B /* DogViewController.h */,
+				DE9332141ADADC8D00AA796B /* DogViewController.m */,
 				DE3DCB421ADA0433001B8A88 /* ViewController.h */,
 				DE3DCB431ADA0433001B8A88 /* ViewController.m */,
 				DE3DCB451ADA0433001B8A88 /* Main.storyboard */,
@@ -238,6 +243,7 @@
 			files = (
 				DE3DCB441ADA0433001B8A88 /* ViewController.m in Sources */,
 				DE3DCB411ADA0433001B8A88 /* AppDelegate.m in Sources */,
+				DE9332151ADADC8D00AA796B /* DogViewController.m in Sources */,
 				DEE207D31ADACACF00357551 /* Dog.m in Sources */,
 				DE3DCB3E1ADA0433001B8A88 /* main.m in Sources */,
 			);
