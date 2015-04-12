@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  StatusViewController.h
 //  KVOPractice
 //
 //  Created by Steve Baker on 4/11/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface StatusViewController : UIViewController
 
 
 @end
