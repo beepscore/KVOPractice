@@ -3,6 +3,9 @@ Practice using key value observing KVO.
 
 # References
 
+## Apple iOS Key-Value Observing Programming Guide
+https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/KeyValueObserving/Articles/KVOCompliance.html
+
 ## KVO Considered Harmful
 2013-12-02  
 http://khanlou.com/2013/12/kvo-considered-harmful/
