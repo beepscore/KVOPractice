@@ -13,7 +13,7 @@
 		DE3DCB471ADA0433001B8A88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE3DCB451ADA0433001B8A88 /* Main.storyboard */; };
 		DE3DCB491ADA0433001B8A88 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE3DCB481ADA0433001B8A88 /* Images.xcassets */; };
 		DE3DCB4C1ADA0433001B8A88 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE3DCB4A1ADA0433001B8A88 /* LaunchScreen.xib */; };
-		DE3DCB581ADA0433001B8A88 /* KVOPracticeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3DCB571ADA0433001B8A88 /* KVOPracticeTests.m */; };
+		DE3DCB581ADA0433001B8A88 /* DogTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3DCB571ADA0433001B8A88 /* DogTests.m */; };
 		DE9332151ADADC8D00AA796B /* DogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE9332141ADADC8D00AA796B /* DogViewController.m */; };
 		DEE207D31ADACACF00357551 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = DEE207D21ADACACF00357551 /* Dog.m */; };
 /* End PBXBuildFile section */
@@ -41,7 +41,7 @@
 		DE3DCB4B1ADA0433001B8A88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DE3DCB511ADA0433001B8A88 /* KVOPracticeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KVOPracticeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE3DCB561ADA0433001B8A88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE3DCB571ADA0433001B8A88 /* KVOPracticeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVOPracticeTests.m; sourceTree = "<group>"; };
+		DE3DCB571ADA0433001B8A88 /* DogTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogTests.m; sourceTree = "<group>"; };
 		DE4BA96F1ADA0C83008FA677 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DE4BA9711ADA0C91008FA677 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		DE9332131ADADC8D00AA796B /* DogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogViewController.h; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 		DE3DCB541ADA0433001B8A88 /* KVOPracticeTests */ = {
 			isa = PBXGroup;
 			children = (
-				DE3DCB571ADA0433001B8A88 /* KVOPracticeTests.m */,
+				DE3DCB571ADA0433001B8A88 /* DogTests.m */,
 				DE3DCB551ADA0433001B8A88 /* Supporting Files */,
 			);
 			path = KVOPracticeTests;
@@ -253,7 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE3DCB581ADA0433001B8A88 /* KVOPracticeTests.m in Sources */,
+				DE3DCB581ADA0433001B8A88 /* DogTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

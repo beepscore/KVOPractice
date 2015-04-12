@@ -1,5 +1,5 @@
 //
-//  KVOPracticeTests.m
+//  DogTests.m
 //  KVOPracticeTests
 //
 //  Created by Steve Baker on 4/11/15.
@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "Dog.h"
 
-@interface KVOPracticeTests : XCTestCase
+@interface DogTests : XCTestCase
 
 @end
 
-@implementation KVOPracticeTests
+@implementation DogTests
 
 - (void)setUp {
     [super setUp];
@@ -25,16 +26,13 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
-}
+- (void)testDatePetted {
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+    Dog *dog = [[Dog alloc] init];
+
+    XCTAssertNil(dog.datePetted);
+    dog.datePetted = [NSDate date];
+    XCTAssertNotNil(dog.datePetted);
 }
 
 @end
