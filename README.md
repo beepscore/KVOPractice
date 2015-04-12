@@ -11,6 +11,9 @@ http://khanlou.com/2013/12/kvo-considered-harmful/
 2014-03-15  
 http://blog.metaobject.com/2014/03/the-siren-call-of-kvo-and-cocoa-bindings.html
 
+## Key-Value Observing
+http://nshipster.com/key-value-observing/
+
 ## Back to Basics: Using KVO
 http://nachbaur.com/blog/back-to-basics-using-kvo
 
