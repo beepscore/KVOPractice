@@ -17,20 +17,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyb-SV-tkW">
-                                <rect key="frame" x="444" y="60" width="100" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dyb-SV-tkW">
+                                <rect key="frame" x="424" y="60" width="120" height="41"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="dLs-bD-I1a"/>
+                                    <constraint firstAttribute="width" constant="120" id="dLs-bD-I1a"/>
                                 </constraints>
-                                <state key="normal" title="Dog view">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Dog View">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="J3I-Zg-cpC" kind="show" id="COs-33-zml"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Dyb-SV-tkW" secondAttribute="trailing" constant="40" id="R1o-90-8DZ"/>
                             <constraint firstItem="Dyb-SV-tkW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="U5l-jP-Utk"/>
@@ -53,8 +54,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEx-3u-STh">
-                                <rect key="frame" x="73" y="65" width="80" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEx-3u-STh">
+                                <rect key="frame" x="56" y="60" width="121" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Status view">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -64,12 +66,22 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vEx-3u-STh" firstAttribute="leading" secondItem="BNa-8k-02q" secondAttribute="leadingMargin" constant="40" id="Ery-Il-t14"/>
+                            <constraint firstItem="vEx-3u-STh" firstAttribute="top" secondItem="UAX-fH-PMe" secondAttribute="bottom" constant="40" id="asA-2f-saf"/>
+                            <constraint firstItem="NB5-jv-aPq" firstAttribute="top" secondItem="vEx-3u-STh" secondAttribute="bottom" constant="505" id="ojW-wW-VJ6"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ojW-wW-VJ6"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vV2-VK-S3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="AVf-mm-Gac" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="927" y="136"/>
+            <point key="canvasLocation" x="951" y="136"/>
         </scene>
     </scenes>
 </document>
