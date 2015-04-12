@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BSDog.h"
 
 @interface DogViewController : UIViewController
+
+@property (strong, nonatomic) BSDog *dog;
 
 @end

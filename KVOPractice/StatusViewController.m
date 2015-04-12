@@ -7,6 +7,7 @@
 //
 
 #import "StatusViewController.h"
+#import "DogViewController.h"
 
 @interface StatusViewController ()
 
@@ -22,6 +23,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    DogViewController *dogViewController = [segue destinationViewController];
+    dogViewController.dog = [[BSDog alloc] init];
 }
 
 // Use unwind segue. It's very flexible.

@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "Dog.h"
+#import "BSDog.h"
 
-@interface DogTests : XCTestCase
+@interface BSDogTests : XCTestCase
 
 @end
 
-@implementation DogTests
+@implementation BSDogTests
 
 - (void)setUp {
     [super setUp];
@@ -28,7 +28,7 @@
 
 - (void)testDatePetted {
 
-    Dog *dog = [[Dog alloc] init];
+    BSDog *dog = [[BSDog alloc] init];
 
     XCTAssertNil(dog.datePetted);
     dog.datePetted = [NSDate date];

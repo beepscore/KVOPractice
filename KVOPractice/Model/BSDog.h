@@ -1,5 +1,5 @@
 //
-//  Dog.h
+//  BSDog.h
 //  KVOPractice
 //
 //  Created by Steve Baker on 4/12/15.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Dog : NSObject 
+@interface BSDog : NSObject
 
 @property (strong, nonatomic) NSDate *datePetted;
 
