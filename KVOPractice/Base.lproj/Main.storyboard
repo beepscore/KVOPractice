@@ -113,7 +113,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3df-qP-okc">
-                                <rect key="frame" x="230" y="174" width="140" height="41"/>
+                                <rect key="frame" x="230" y="261" width="140" height="41"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Feed the dog">
@@ -124,7 +124,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGg-WX-emI">
-                                <rect key="frame" x="239" y="275" width="122" height="41"/>
+                                <rect key="frame" x="239" y="160" width="122" height="41"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Pet the dog">
@@ -137,12 +137,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="IGg-WX-emI" firstAttribute="top" secondItem="3df-qP-okc" secondAttribute="bottom" constant="60" id="ArT-WT-bju"/>
+                            <constraint firstItem="IGg-WX-emI" firstAttribute="top" secondItem="BNa-8k-02q" secondAttribute="top" constant="160" id="8VQ-mp-1g5"/>
                             <constraint firstAttribute="centerX" secondItem="IGg-WX-emI" secondAttribute="centerX" id="DZM-oi-yGQ"/>
                             <constraint firstItem="vEx-3u-STh" firstAttribute="leading" secondItem="BNa-8k-02q" secondAttribute="leadingMargin" constant="40" id="Ery-Il-t14"/>
                             <constraint firstAttribute="centerX" secondItem="3df-qP-okc" secondAttribute="centerX" id="Foc-6E-L4E"/>
+                            <constraint firstItem="3df-qP-okc" firstAttribute="top" secondItem="IGg-WX-emI" secondAttribute="bottom" constant="60" id="YeU-k4-Qc7"/>
                             <constraint firstItem="vEx-3u-STh" firstAttribute="top" secondItem="UAX-fH-PMe" secondAttribute="bottom" constant="40" id="asA-2f-saf"/>
-                            <constraint firstItem="3df-qP-okc" firstAttribute="top" secondItem="BNa-8k-02q" secondAttribute="top" constant="174" id="dat-Ak-gnf"/>
                             <constraint firstItem="NB5-jv-aPq" firstAttribute="top" secondItem="vEx-3u-STh" secondAttribute="bottom" constant="505" id="ojW-wW-VJ6"/>
                         </constraints>
                         <variation key="default">
