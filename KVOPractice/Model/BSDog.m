@@ -11,7 +11,8 @@
 @implementation BSDog
 
 // override implicitly synthesized setter to send KVO notifications
-// don't need to do this because NSDate is KVO compliant
+// Don't need to do this because NSDate is KVO compliant.
+// By default uses property name as the key string.
 // - (void)setDatePetted:(NSDate *)aDate {
 //
 //     KVO send notification

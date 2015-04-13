@@ -9,6 +9,7 @@
 #import "StatusViewController.h"
 #import "BSDog.h"
 #import "DogViewController.h"
+#import "BSKVOConstants.h"
 
 @interface StatusViewController ()
 
@@ -35,8 +36,8 @@
 
 - (void) dealloc {
     // KVO stop observing dog
-    [self.dog removeObserver:self forKeyPath:@"dateFed"];
-    [self.dog removeObserver:self forKeyPath:@"datePetted"];
+    [self.dog removeObserver:self forKeyPath:kDogDateFedKey];
+    [self.dog removeObserver:self forKeyPath:kDogDatePettedKey];
 }
 
 
@@ -63,12 +64,12 @@
 
 - (void)addKVOObservers {
     [self.dog addObserver:self
-               forKeyPath:@"dateFed"
+               forKeyPath:kDogDateFedKey
                   options:(NSKeyValueObservingOptionNew)
                   context:nil];
 
     [self.dog addObserver:self
-               forKeyPath:@"datePetted"
+               forKeyPath:kDogDatePettedKey
                   options:(NSKeyValueObservingOptionNew)
                   context:nil];
 }
@@ -79,7 +80,7 @@
                         change:(NSDictionary*)change
                        context:(void*)context {
 
-    if ([keyPath isEqualToString:@"dateFed"]) {
+    if ([keyPath isEqualToString:kDogDateFedKey]) {
         // assumes object is dog
         NSDate *dateFedFromKVO = [change objectForKey:NSKeyValueChangeNewKey];
         NSLog(@"StatusViewController dateFedFromKVO %@", dateFedFromKVO);
@@ -87,7 +88,7 @@
                                   descriptionWithLocale:[NSLocale currentLocale]];
     }
 
-    else if ([keyPath isEqualToString:@"datePetted"]) {
+    else if ([keyPath isEqualToString:kDogDatePettedKey]) {
         // assumes object is dog
         NSDate *datePettedFromKVO = [change objectForKey:NSKeyValueChangeNewKey];
         NSLog(@"StatusViewController datePettedFromKVO %@", datePettedFromKVO);
