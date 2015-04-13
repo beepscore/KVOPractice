@@ -43,14 +43,31 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dog last fed at:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eny-um-URP">
+                                <rect key="frame" x="20" y="292" width="117" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="never fed!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfJ-F9-YTp">
+                                <rect key="frame" x="20" y="333" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="YL1-UJ-BMo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="170" id="1vY-E7-4r0"/>
+                            <constraint firstItem="UfJ-F9-YTp" firstAttribute="top" secondItem="Eny-um-URP" secondAttribute="bottom" constant="20" id="7Ea-qr-KJq"/>
+                            <constraint firstItem="UfJ-F9-YTp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Bv4-2Z-bIG"/>
+                            <constraint firstItem="Eny-um-URP" firstAttribute="top" secondItem="nqL-57-vpQ" secondAttribute="bottom" constant="60" id="FPg-ZT-Aqp"/>
+                            <constraint firstAttribute="trailing" secondItem="UfJ-F9-YTp" secondAttribute="trailing" constant="20" id="Jbz-zt-YBf"/>
                             <constraint firstItem="nqL-57-vpQ" firstAttribute="bottom" secondItem="YL1-UJ-BMo" secondAttribute="bottom" id="MCo-15-LlI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Dyb-SV-tkW" secondAttribute="trailing" constant="40" id="R1o-90-8DZ"/>
                             <constraint firstAttribute="trailing" secondItem="nqL-57-vpQ" secondAttribute="trailing" constant="20" id="S8R-jV-7Br"/>
                             <constraint firstItem="Dyb-SV-tkW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="U5l-jP-Utk"/>
+                            <constraint firstItem="Eny-um-URP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="VKx-gn-L1a"/>
                             <constraint firstItem="nqL-57-vpQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="XdW-Qd-RPZ"/>
                             <constraint firstItem="nqL-57-vpQ" firstAttribute="leading" secondItem="YL1-UJ-BMo" secondAttribute="trailing" constant="20" id="hg9-Ie-7WE"/>
                             <constraint firstItem="YL1-UJ-BMo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="qkO-wo-dHi"/>
@@ -64,12 +81,13 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="lastFedLabel" destination="UfJ-F9-YTp" id="UX6-GE-z2o"/>
                         <outlet property="lastPettedLabel" destination="nqL-57-vpQ" id="X2y-pf-dhF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="183" y="136"/>
+            <point key="canvasLocation" x="189" y="123"/>
         </scene>
         <!--Dog View Controller-->
         <scene sceneID="S7J-rc-Ikn">
@@ -95,19 +113,32 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3df-qP-okc">
-                                <rect key="frame" x="239" y="174" width="122" height="41"/>
+                                <rect key="frame" x="230" y="174" width="140" height="41"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Feed the dog">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="feedTheDogTapped:" destination="J3I-Zg-cpC" eventType="touchUpInside" id="Tyi-ba-hhw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGg-WX-emI">
+                                <rect key="frame" x="239" y="275" width="122" height="41"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Pet the dog">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="petTheDogTapped:" destination="J3I-Zg-cpC" eventType="touchUpInside" id="9Xj-bc-k51"/>
+                                    <action selector="petTheDogTapped:" destination="J3I-Zg-cpC" eventType="touchUpInside" id="Nhg-EM-Rdd"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="IGg-WX-emI" firstAttribute="top" secondItem="3df-qP-okc" secondAttribute="bottom" constant="60" id="ArT-WT-bju"/>
+                            <constraint firstAttribute="centerX" secondItem="IGg-WX-emI" secondAttribute="centerX" id="DZM-oi-yGQ"/>
                             <constraint firstItem="vEx-3u-STh" firstAttribute="leading" secondItem="BNa-8k-02q" secondAttribute="leadingMargin" constant="40" id="Ery-Il-t14"/>
                             <constraint firstAttribute="centerX" secondItem="3df-qP-okc" secondAttribute="centerX" id="Foc-6E-L4E"/>
                             <constraint firstItem="vEx-3u-STh" firstAttribute="top" secondItem="UAX-fH-PMe" secondAttribute="bottom" constant="40" id="asA-2f-saf"/>
@@ -124,7 +155,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vV2-VK-S3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="AVf-mm-Gac" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="951" y="136"/>
+            <point key="canvasLocation" x="954" y="123"/>
         </scene>
     </scenes>
 </document>

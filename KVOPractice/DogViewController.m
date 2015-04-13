@@ -10,6 +10,7 @@
 
 @interface DogViewController ()
 
+- (IBAction)feedTheDogTapped:(id)sender;
 - (IBAction)petTheDogTapped:(id)sender;
 
 @end
@@ -35,6 +36,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)feedTheDogTapped:(id)sender {
+    self.dog.dateFed = [NSDate date];
+    NSLog(@"DogViewController self.dog.dateFed %@", self.dog.dateFed);
+}
 
 - (IBAction)petTheDogTapped:(id)sender {
     self.dog.datePetted = [NSDate date];

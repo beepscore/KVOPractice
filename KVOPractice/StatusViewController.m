@@ -13,6 +13,8 @@
 @interface StatusViewController ()
 
 @property (strong, nonatomic) BSDog *dog;
+
+@property (weak, nonatomic) IBOutlet UILabel *lastFedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *lastPettedLabel;
 
 @end
@@ -33,6 +35,7 @@
 
 - (void) dealloc {
     // KVO stop observing dog
+    [self.dog removeObserver:self forKeyPath:@"dateFed"];
     [self.dog removeObserver:self forKeyPath:@"datePetted"];
 }
 
@@ -60,6 +63,11 @@
 
 - (void)addKVOObservers {
     [self.dog addObserver:self
+               forKeyPath:@"dateFed"
+                  options:(NSKeyValueObservingOptionNew)
+                  context:nil];
+
+    [self.dog addObserver:self
                forKeyPath:@"datePetted"
                   options:(NSKeyValueObservingOptionNew)
                   context:nil];
@@ -71,7 +79,15 @@
                         change:(NSDictionary*)change
                        context:(void*)context {
 
-    if ([keyPath isEqualToString:@"datePetted"]) {
+    if ([keyPath isEqualToString:@"dateFed"]) {
+        // assumes object is dog
+        NSDate *dateFedFromKVO = [change objectForKey:NSKeyValueChangeNewKey];
+        NSLog(@"StatusViewController dateFedFromKVO %@", dateFedFromKVO);
+        self.lastFedLabel.text = [dateFedFromKVO
+                                     descriptionWithLocale:[NSLocale currentLocale]];
+    }
+    
+    else if ([keyPath isEqualToString:@"datePetted"]) {
         // assumes object is dog
         NSDate *datePettedFromKVO = [change objectForKey:NSKeyValueChangeNewKey];
         NSLog(@"StatusViewController datePettedFromKVO %@", datePettedFromKVO);
