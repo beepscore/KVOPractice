@@ -10,6 +10,7 @@
 
 @interface BSDog : NSObject
 
+@property (strong, nonatomic) NSDate *dateFed;
 @property (strong, nonatomic) NSDate *datePetted;
 
 @end
