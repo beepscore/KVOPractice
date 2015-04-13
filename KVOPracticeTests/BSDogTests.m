@@ -26,6 +26,15 @@
     [super tearDown];
 }
 
+- (void)testDateFed {
+
+    BSDog *dog = [[BSDog alloc] init];
+
+    XCTAssertNil(dog.dateFed);
+    dog.dateFed = [NSDate date];
+    XCTAssertNotNil(dog.dateFed);
+}
+
 - (void)testDatePetted {
 
     BSDog *dog = [[BSDog alloc] init];
