@@ -84,9 +84,9 @@
         NSDate *dateFedFromKVO = [change objectForKey:NSKeyValueChangeNewKey];
         NSLog(@"StatusViewController dateFedFromKVO %@", dateFedFromKVO);
         self.lastFedLabel.text = [dateFedFromKVO
-                                     descriptionWithLocale:[NSLocale currentLocale]];
+                                  descriptionWithLocale:[NSLocale currentLocale]];
     }
-    
+
     else if ([keyPath isEqualToString:@"datePetted"]) {
         // assumes object is dog
         NSDate *datePettedFromKVO = [change objectForKey:NSKeyValueChangeNewKey];
