@@ -9,7 +9,6 @@
 #import "StatusViewController.h"
 #import "BSDog.h"
 #import "DogViewController.h"
-#import "BSKVOConstants.h"
 
 @interface StatusViewController ()
 
@@ -36,8 +35,8 @@
 
 - (void) dealloc {
     // KVO stop observing dog
-    [self.dog removeObserver:self forKeyPath:kDogDateFedKey];
-    [self.dog removeObserver:self forKeyPath:kDogDatePettedKey];
+    [self.dog removeObserver:self forKeyPath:NSStringFromSelector(@selector(dateFed))];
+    [self.dog removeObserver:self forKeyPath:NSStringFromSelector(@selector(datePetted))];
 }
 
 
@@ -63,13 +62,17 @@
 // This project is designed to practice using KVO.
 
 - (void)addKVOObservers {
+    // forKeyPath use selector instead of string constant.
+    // This way if we refactor/rename property without renaming selector,
+    // compiler will warn selector doesn't exist
+    // http://khanlou.com/2013/12/kvo-considered-harmful/
     [self.dog addObserver:self
-               forKeyPath:kDogDateFedKey
+               forKeyPath:NSStringFromSelector(@selector(dateFed))
                   options:(NSKeyValueObservingOptionNew)
                   context:nil];
 
     [self.dog addObserver:self
-               forKeyPath:kDogDatePettedKey
+               forKeyPath:NSStringFromSelector(@selector(datePetted))
                   options:(NSKeyValueObservingOptionNew)
                   context:nil];
 }
@@ -84,9 +87,9 @@
     // To safely update UI, first make sure execution is on main queue
     __weak typeof(self) weakSelf = self;
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        
+
         if (object == weakSelf.dog
-            && [keyPath isEqualToString:kDogDateFedKey]) {
+            && [keyPath isEqualToString:NSStringFromSelector(@selector(dateFed))]) {
             NSDate *dateFedFromKVO = [change objectForKey:NSKeyValueChangeNewKey];
             NSLog(@"StatusViewController dateFedFromKVO %@", dateFedFromKVO);
             weakSelf.lastFedLabel.text = [dateFedFromKVO
@@ -94,7 +97,7 @@
         }
         
         else if (object == weakSelf.dog
-                 && [keyPath isEqualToString:kDogDatePettedKey]) {
+                 && [keyPath isEqualToString:NSStringFromSelector(@selector(datePetted))]) {
             NSDate *datePettedFromKVO = [change objectForKey:NSKeyValueChangeNewKey];
             NSLog(@"StatusViewController datePettedFromKVO %@", datePettedFromKVO);
             weakSelf.lastPettedLabel.text = [datePettedFromKVO

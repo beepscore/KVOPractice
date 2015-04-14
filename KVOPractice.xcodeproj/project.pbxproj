@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE01E93D1ADC120B00540323 /* BSKVOConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = DE01E93C1ADC120B00540323 /* BSKVOConstants.m */; };
 		DE3DCB3E1ADA0433001B8A88 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3DCB3D1ADA0433001B8A88 /* main.m */; };
 		DE3DCB411ADA0433001B8A88 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3DCB401ADA0433001B8A88 /* AppDelegate.m */; };
 		DE3DCB441ADA0433001B8A88 /* StatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE3DCB431ADA0433001B8A88 /* StatusViewController.m */; };
@@ -30,8 +29,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DE01E93C1ADC120B00540323 /* BSKVOConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSKVOConstants.m; sourceTree = "<group>"; };
-		DE01E93E1ADC122200540323 /* BSKVOConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSKVOConstants.h; sourceTree = "<group>"; };
 		DE3DCB381ADA0433001B8A88 /* KVOPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KVOPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE3DCB3C1ADA0433001B8A88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE3DCB3D1ADA0433001B8A88 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -97,8 +94,6 @@
 				DEE207D51ADACB8C00357551 /* Model */,
 				DE3DCB3F1ADA0433001B8A88 /* AppDelegate.h */,
 				DE3DCB401ADA0433001B8A88 /* AppDelegate.m */,
-				DE01E93E1ADC122200540323 /* BSKVOConstants.h */,
-				DE01E93C1ADC120B00540323 /* BSKVOConstants.m */,
 				DE9332131ADADC8D00AA796B /* DogViewController.h */,
 				DE9332141ADADC8D00AA796B /* DogViewController.m */,
 				DE3DCB421ADA0433001B8A88 /* StatusViewController.h */,
@@ -251,7 +246,6 @@
 				DE9332151ADADC8D00AA796B /* DogViewController.m in Sources */,
 				DEE207D31ADACACF00357551 /* BSDog.m in Sources */,
 				DE3DCB3E1ADA0433001B8A88 /* main.m in Sources */,
-				DE01E93D1ADC120B00540323 /* BSKVOConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
