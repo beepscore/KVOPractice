@@ -85,20 +85,20 @@
     __weak typeof(self) weakSelf = self;
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         
-        if ([keyPath isEqualToString:kDogDateFedKey]) {
-            // assumes object is dog
+        if (object == weakSelf.dog
+            && [keyPath isEqualToString:kDogDateFedKey]) {
             NSDate *dateFedFromKVO = [change objectForKey:NSKeyValueChangeNewKey];
             NSLog(@"StatusViewController dateFedFromKVO %@", dateFedFromKVO);
             weakSelf.lastFedLabel.text = [dateFedFromKVO
-                                      descriptionWithLocale:[NSLocale currentLocale]];
+                                          descriptionWithLocale:[NSLocale currentLocale]];
         }
         
-        else if ([keyPath isEqualToString:kDogDatePettedKey]) {
-            // assumes object is dog
+        else if (object == weakSelf.dog
+                 && [keyPath isEqualToString:kDogDatePettedKey]) {
             NSDate *datePettedFromKVO = [change objectForKey:NSKeyValueChangeNewKey];
             NSLog(@"StatusViewController datePettedFromKVO %@", datePettedFromKVO);
             weakSelf.lastPettedLabel.text = [datePettedFromKVO
-                                         descriptionWithLocale:[NSLocale currentLocale]];
+                                             descriptionWithLocale:[NSLocale currentLocale]];
         }
         
         else {
