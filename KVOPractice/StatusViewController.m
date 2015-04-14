@@ -79,29 +79,35 @@
                       ofObject:(id)object
                         change:(NSDictionary*)change
                        context:(void*)context {
-
-    if ([keyPath isEqualToString:kDogDateFedKey]) {
-        // assumes object is dog
-        NSDate *dateFedFromKVO = [change objectForKey:NSKeyValueChangeNewKey];
-        NSLog(@"StatusViewController dateFedFromKVO %@", dateFedFromKVO);
-        self.lastFedLabel.text = [dateFedFromKVO
-                                  descriptionWithLocale:[NSLocale currentLocale]];
-    }
-
-    else if ([keyPath isEqualToString:kDogDatePettedKey]) {
-        // assumes object is dog
-        NSDate *datePettedFromKVO = [change objectForKey:NSKeyValueChangeNewKey];
-        NSLog(@"StatusViewController datePettedFromKVO %@", datePettedFromKVO);
-        self.lastPettedLabel.text = [datePettedFromKVO
-                                     descriptionWithLocale:[NSLocale currentLocale]];
-    }
-
-    else {
-        [super observeValueForKeyPath:keyPath
-                             ofObject:object
-                               change:change
-                              context:context];
-    }
+    
+    // KVO notification may have arrived on a background queue.
+    // To safely update UI, first make sure execution is on main queue
+    __weak typeof(self) weakSelf = self;
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        
+        if ([keyPath isEqualToString:kDogDateFedKey]) {
+            // assumes object is dog
+            NSDate *dateFedFromKVO = [change objectForKey:NSKeyValueChangeNewKey];
+            NSLog(@"StatusViewController dateFedFromKVO %@", dateFedFromKVO);
+            weakSelf.lastFedLabel.text = [dateFedFromKVO
+                                      descriptionWithLocale:[NSLocale currentLocale]];
+        }
+        
+        else if ([keyPath isEqualToString:kDogDatePettedKey]) {
+            // assumes object is dog
+            NSDate *datePettedFromKVO = [change objectForKey:NSKeyValueChangeNewKey];
+            NSLog(@"StatusViewController datePettedFromKVO %@", datePettedFromKVO);
+            weakSelf.lastPettedLabel.text = [datePettedFromKVO
+                                         descriptionWithLocale:[NSLocale currentLocale]];
+        }
+        
+        else {
+            [super observeValueForKeyPath:keyPath
+                                 ofObject:object
+                                   change:change
+                                  context:context];
+        }
+    }];
 }
-
-@end
+     
+     @end
