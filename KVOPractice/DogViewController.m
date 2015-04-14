@@ -7,13 +7,7 @@
 //
 
 #import "DogViewController.h"
-
-@interface DogViewController ()
-
-- (IBAction)feedTheDogTapped:(id)sender;
-- (IBAction)petTheDogTapped:(id)sender;
-
-@end
+#import "DogViewControllerPrivate.h"
 
 @implementation DogViewController
 
