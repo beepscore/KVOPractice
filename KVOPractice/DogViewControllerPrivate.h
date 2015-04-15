@@ -13,5 +13,6 @@
 
 - (IBAction)feedTheDogTapped:(id)sender;
 - (IBAction)petTheDogTapped:(id)sender;
+- (void)updateDatePettedInBackground;
 
 @end

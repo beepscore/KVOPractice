@@ -37,13 +37,17 @@
 }
 
 - (IBAction)petTheDogTapped:(id)sender {
+    [self updateDatePettedInBackground];
+}
+
+- (void)updateDatePettedInBackground {
     // update model on background queue.
     // To avoid possible crash, KVO observer must get main queue before updating UI
     __weak typeof(self) weakSelf = self;
     NSOperationQueue *backgroundQueue = [[NSOperationQueue alloc] init];
     [backgroundQueue addOperationWithBlock:^{
-        NSLog(@"DogViewController self.dog.datePetted %@", weakSelf.dog.datePetted);
         weakSelf.dog.datePetted = [NSDate date];
+        NSLog(@"DogViewController updateDatePettedInBackground datePetted %@", weakSelf.dog.datePetted);
     }];
 }
 
