@@ -19,6 +19,12 @@
 
 @end
 
+// Use context for correct forwarding to any superclasses
+// The static keyword makes the variable file-scoped instead of global.
+// We don't care about the value, will use address as a unique identifier
+// https://www.ianthehenry.com/2014/5/4/kvo-101/
+static const void *kStatusViewControllerKVOContext;
+
 @implementation StatusViewController
 
 - (void)viewDidLoad {
@@ -35,8 +41,12 @@
 
 - (void) dealloc {
     // KVO stop observing dog
-    [self.dog removeObserver:self forKeyPath:NSStringFromSelector(@selector(dateFed))];
-    [self.dog removeObserver:self forKeyPath:NSStringFromSelector(@selector(datePetted))];
+    [self.dog removeObserver:self
+                  forKeyPath:NSStringFromSelector(@selector(dateFed))
+                     context:&kStatusViewControllerKVOContext];
+    [self.dog removeObserver:self
+                  forKeyPath:NSStringFromSelector(@selector(datePetted))
+                     context:&kStatusViewControllerKVOContext];
 }
 
 
@@ -67,17 +77,15 @@
     // compiler will warn selector doesn't exist
     // http://khanlou.com/2013/12/kvo-considered-harmful/
     
-    // TODO: Consider using context non-nil for correct forwarding to any superclasses
-    // https://www.ianthehenry.com/2014/5/4/kvo-101/
     [self.dog addObserver:self
                forKeyPath:NSStringFromSelector(@selector(dateFed))
                   options:(NSKeyValueObservingOptionNew)
-                  context:nil];
+                  context:&kStatusViewControllerKVOContext];
 
     [self.dog addObserver:self
                forKeyPath:NSStringFromSelector(@selector(datePetted))
                   options:(NSKeyValueObservingOptionNew)
-                  context:nil];
+                  context:&kStatusViewControllerKVOContext];
 }
 
 // KVO uses this single callback method for all object change notifications
@@ -91,23 +99,22 @@
     __weak typeof(self) weakSelf = self;
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
 
-        if (object == weakSelf.dog
-            && [keyPath isEqualToString:NSStringFromSelector(@selector(dateFed))]) {
-            NSDate *dateFedFromKVO = [change objectForKey:NSKeyValueChangeNewKey];
-            NSLog(@"StatusViewController dateFedFromKVO %@", dateFedFromKVO);
-            weakSelf.lastFedLabel.text = [dateFedFromKVO
-                                          descriptionWithLocale:[NSLocale currentLocale]];
-        }
-        
-        else if (object == weakSelf.dog
-                 && [keyPath isEqualToString:NSStringFromSelector(@selector(datePetted))]) {
-            NSDate *datePettedFromKVO = [change objectForKey:NSKeyValueChangeNewKey];
-            NSLog(@"StatusViewController datePettedFromKVO %@", datePettedFromKVO);
-            weakSelf.lastPettedLabel.text = [datePettedFromKVO
-                                             descriptionWithLocale:[NSLocale currentLocale]];
-        }
-        
-        else {
+        if (context == &kStatusViewControllerKVOContext) {
+            
+            if (object == weakSelf.dog
+                && [keyPath isEqualToString:NSStringFromSelector(@selector(dateFed))]) {
+                NSDate *dateFedFromKVO = [change objectForKey:NSKeyValueChangeNewKey];
+                NSLog(@"StatusViewController dateFedFromKVO %@", dateFedFromKVO);
+                weakSelf.lastFedLabel.text = [dateFedFromKVO
+                                              descriptionWithLocale:[NSLocale currentLocale]];
+            } else if (object == weakSelf.dog
+                       && [keyPath isEqualToString:NSStringFromSelector(@selector(datePetted))]) {
+                NSDate *datePettedFromKVO = [change objectForKey:NSKeyValueChangeNewKey];
+                NSLog(@"StatusViewController datePettedFromKVO %@", datePettedFromKVO);
+                weakSelf.lastPettedLabel.text = [datePettedFromKVO
+                                                 descriptionWithLocale:[NSLocale currentLocale]];
+            }
+        } else {
             [super observeValueForKeyPath:keyPath
                                  ofObject:object
                                    change:change
@@ -116,4 +123,4 @@
     }];
 }
      
-     @end
+@end
