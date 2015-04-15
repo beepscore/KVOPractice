@@ -41,7 +41,7 @@
 
     NSDate *testDate = [NSDate date];
     float testDateMinusActualDateSeconds = [testDate
-                                     timeIntervalSinceDate:self.dogViewController.dog.dateFed];
+                                     timeIntervalSinceDate:actualDate];
     XCTAssert(testDateMinusActualDateSeconds < 2.0);
 }
 
