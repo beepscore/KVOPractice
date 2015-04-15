@@ -80,11 +80,11 @@
                                             // if (dog && dog.datePetted) {
                                             if (self.dogViewController.dog
                                                 && self.dogViewController.dog.datePetted) {
-                                                XCTAssertNotNil(self.dogViewController.dog);
+                                                XCTAssertNotNil(self.dogViewController.dog.datePetted);
                                                 [expectation fulfill];
                                                 return YES;
                                             } else {
-                                                XCTAssertNotNil(self.dogViewController.dog);
+                                                XCTAssertNotNil(self.dogViewController.dog.datePetted);
                                                 [expectation fulfill];
                                                 return NO;
                                             }
