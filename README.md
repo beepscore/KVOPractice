@@ -32,6 +32,23 @@ It works much like KVO, but with blocks instead of overriding
 ### If KVO is right, why does it feel so wrong?
 https://www.ianthehenry.com/2014/5/4/kvo-101/
 
+## Asynchronous Unit testing of KVO methods
+Apple XCTestCase+AsynchronousTesting.h
+
+http://astralbodi.es/2014/08/06/asynchronous-unit-testing-core-data-with-xcode-6/
+
+http://www.pumpmybicep.com/2014/08/20/asynchronous-unit-testing-with-xctest/
+
+http://iosunittesting.com/asynchronous-tests-using-xctestexpectation/
+
+http://nshipster.com/xctestcase/
+
+http://blog.dadabeatnik.com/2014/07/13/asynchronous-unit-testing-in-xcode-6/#more-1114
+
+https://www.bignerdranch.com/blog/asynchronous-testing-with-xcode-6/
+
+http://stackoverflow.com/questions/27555499/xctestexpectation-how-to-avoid-calling-the-fulfill-method-after-the-wait-contex
+
 # Results
 
 ## Thread safety

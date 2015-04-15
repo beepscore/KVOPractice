@@ -48,14 +48,6 @@
 - (void)testUpdateDatePettedInBackgroundAsync {
     // synchronous test fails, probably because petTheDogTapped uses background thread
     // Use an asynchronous test to give it time to pass
-    // Reference Apple XCTestCase+AsynchronousTesting.h
-    // http://astralbodi.es/2014/08/06/asynchronous-unit-testing-core-data-with-xcode-6/
-    // http://www.pumpmybicep.com/2014/08/20/asynchronous-unit-testing-with-xctest/
-    // http://iosunittesting.com/asynchronous-tests-using-xctestexpectation/
-    // http://nshipster.com/xctestcase/
-    // http://blog.dadabeatnik.com/2014/07/13/asynchronous-unit-testing-in-xcode-6/#more-1114
-    // https://www.bignerdranch.com/blog/asynchronous-testing-with-xcode-6/
-    // http://stackoverflow.com/questions/27555499/xctestexpectation-how-to-avoid-calling-the-fulfill-method-after-the-wait-contex
 
     self.dogViewController = [[DogViewController alloc] init];
     self.dogViewController.dog = [[BSDog alloc] init];
