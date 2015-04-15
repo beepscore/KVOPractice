@@ -66,6 +66,9 @@
     // This way if we refactor/rename property without renaming selector,
     // compiler will warn selector doesn't exist
     // http://khanlou.com/2013/12/kvo-considered-harmful/
+    
+    // TODO: Consider using context non-nil for correct forwarding to any superclasses
+    // https://www.ianthehenry.com/2014/5/4/kvo-101/
     [self.dog addObserver:self
                forKeyPath:NSStringFromSelector(@selector(dateFed))
                   options:(NSKeyValueObservingOptionNew)
