@@ -29,6 +29,9 @@ It provides APIs for composing and transforming streams of values.
 It works much like KVO, but with blocks instead of overriding
     -observeValueForKeyPath:ofObject:change:context:  
 
+### If KVO is right, why does it feel so wrong?
+https://www.ianthehenry.com/2014/5/4/kvo-101/
+
 # Results
 
 ## Thread safety
