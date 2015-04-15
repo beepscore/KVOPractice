@@ -80,7 +80,13 @@
                                             // if (dog && dog.datePetted) {
                                             if (self.dogViewController.dog
                                                 && self.dogViewController.dog.datePetted) {
-                                                XCTAssertNotNil(self.dogViewController.dog.datePetted);
+                                                NSDate *actualDate = self.dogViewController.dog.datePetted;
+                                                XCTAssertNotNil(actualDate);
+                                                
+                                                NSDate *testDate = [NSDate date];
+                                                float testDateMinusActualDateSeconds = [testDate
+                                                                                        timeIntervalSinceDate:actualDate];
+                                                XCTAssert(testDateMinusActualDateSeconds < 2.0);
                                                 [expectation fulfill];
                                                 return YES;
                                             } else {
